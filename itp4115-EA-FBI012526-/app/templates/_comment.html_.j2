@@ -1,0 +1,23 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('user', username=com.username) }}">
+            </a>
+
+            <h3>{{com.username}}</h3>
+        </td>
+        <td>
+            {% set user_link %}
+            <a href="{{ url_for('user', username=com.username) }}">{{ com.username }}</a>
+        {% endset %}
+        {{ _('%(username)s said %(when)s',
+        username=user_link, when=moment(com.timestamp).fromNow()) }}
+        {% if showname %}
+               {{ _(' about %(showname)s',showname=showname) }}
+                <br/>
+        {% endif %}
+        <br/>
+        {{ com.comment }}
+    </td>
+</tr>
+</table>

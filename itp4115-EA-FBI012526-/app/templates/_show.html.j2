@@ -1,0 +1,23 @@
+<table class="table table-hover">
+    <tr>
+        <td width=20px">
+
+
+             <h3>{{show.name}}
+                            <h6>{{show.timestamp}}</h6>
+              </h3>
+
+              <a href="{{ url_for('show', show_id=show.id,show_name=show.name) }}">
+                      <img src="{{ show.img }}" width='200',height='100'/>
+              </a>
+
+
+        </td>
+                <td>
+                </td>
+        <td>
+        <h4>About:</h4>
+        <p>{{show.info}}</p>
+        </td>
+</tr>
+</table>
